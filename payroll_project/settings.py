@@ -19,6 +19,8 @@ CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv(
     "https://employee-management-payroll-django-production-d7f9.up.railway.app"
 ).split(",") if o.strip()]
 
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 INSTALLED_APPS = [
     "django.contrib.admin", "django.contrib.auth", "django.contrib.contenttypes",
     "django.contrib.sessions", "django.contrib.messages", "django.contrib.staticfiles",
